@@ -18,7 +18,7 @@ new is === tight coupling
 
 new is polymorphic in languages like Ruby
 
-Abstract factory, factory method, are there to douple a client
+Abstract factory, factory method, are there to decouple a client
 from the class of objects they need.
 
 Almost any function that contains instanceof may be violating 
