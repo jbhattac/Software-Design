@@ -1,0 +1,9 @@
+You Arent Gonna Need It(yet) - YAGNIy
+
+$Now	$Later
+      >             - postpone
+      ==            - postpone
+      <             - probability?
+                      high - now
+		      *    - postpone
+
