@@ -1,0 +1,36 @@
+What is a good design?
+
+Reduced cost of change
+As simple as possible
+Flexible, maintainable and adaptable to change
+Easy of understand
+Easily Evoluable
+resilient
+Testable
+Addresses collaboratively arrived-upon needs
+Relevant
+Modular
+Extendable
+loosely coupled, highly cohesive
+secure by design
+
+https://twitter.com/venkat_s/status/561046784186015744
+
+Characterisics of Good Design:
+-Simple
+-Fewer moving parts
+-Relevant
+-higher cohesion and loose coupling
+
+Cohesion - code that does one and only one things well
+ narrow and focused
+
+ A code that is cohesive have less frequency of change
+
+
+Coupling:
+Low instead of high
+Loose instead of tight
+
+Both low and loose coupling
+
