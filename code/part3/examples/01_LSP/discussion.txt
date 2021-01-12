@@ -1,0 +1,86 @@
+Inheritance is the weakest link of OOP
+Inheritance is predominantly a feature needed in statically typed language
+
+Inheritance leads to tight coupling and the dependency is rather
+ridit and stagnant.
+
+Should we use inheritance or delegation?
+
+If an object of B wants to use an object of A, then use delegation.
+If an object of B should be used where an object of A is expected,
+then use inheritance.
+
+Use delegation for reuse and use inheritance for substitutability.
+
+To use vs. to be used where expected.
+
+Why not use inheritance all the time?
+
+We have a contract to abide by.
+
+Barbara Liskov's Substitution principle (LSP)
+
+A user of a base class should not know the difference between
+using a base class or one of its derived classes.
+
+The derived class services should require no more and promise
+no less than the corresponding services of the base class.
+
+1. It is more difficult to inherit from a class than to simply
+use it.
+2. The users of a base class will be affected if we inherit 
+incorectly from a base class. The users of our class will violate 
+OCP if we vilate LSP.
+
+If we violate LSP, we may cause others to violate OCP to work around
+the mess we create.
+
+Good examples of LSP:
+
+1. In Java, a derived class method should not be protected or private
+if the corresponding base method is public.
+   If a base method is protected, then the derived method can't be
+   private.
+
+2. In Java, if a base method declares throws E1, then the
+   corresponding derived method can't throw any other exceptions,
+   like E2, for example (unless E2 extends E1).
+
+     user(Base base) {
+       try {
+        base.f1();
+       } catch(E1 ex) {
+         ...handle...
+       }
+     }
+
+     if we pass new Derived() to user, and if f2 where to throw
+     some arbitrary exception, how does the user handle it?
+
+     One way
+     user(Base base) {
+        //base instanceof Derived 
+	...
+
+        try {
+	  base.f1();
+	} catch(Exception ex) {
+	  if(ex instanceof E1) ...
+	  if(ex instanceof E2) ...
+	}
+
+	//no matter how we address this, user ends up violating OCP
+     }
+
+     To protect from such situation, Java already disallows 
+     throwing new checked exceptions from the overriding methods.
+
+Known violations of LSP (Sadly).
+
+   class Stack extends Vector (oh, No).
+
+If we pass a Stack to function that takes a Vector we are in trouble.
+This will violate the invariant of a Stack. Or the function starts
+checking if the Vector were a Stack - violation of OCP.
+
+LSP tries really hard to make sure we do not violate OCP.
