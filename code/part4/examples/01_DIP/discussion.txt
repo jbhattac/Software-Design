@@ -1,0 +1,26 @@
+Dependency Inversion Principle
+
+Do not blindly use any principle
+
+We want to avoid tight coupling as much as possible.
+Why? Because we want code to be extensible and we want to avoid
+violating OCP.
+
+DIP says that a concreate class should not depend on another 
+concreate class. Instead both should depend on an interface.
+
+Interfaces represent loose coupling compared to depedency on classes.
+
+ Human	------------> Clock
+
+----------------------------------------------------------------
+
+ Human	------------> Alarm
+                       ^
+		       |--------|-------|
+		       |        |       |
+		     Clock   Computer SmartPhones...
+
+Rather than the direction of dependency going from a class to 
+a class, the classes now depend on an interface.
+
