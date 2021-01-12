@@ -12,7 +12,7 @@ public class RemoteTest {
   @Test
   void remoteIncreaseVolumeOfATV() {
     TV tv = new TV();
-    Remote remote = RemoteFactory.createRemoteForTV(tv);
+    Remote remote = RemoteFactory.createRemote(tv);
 
     int volume = tv.getVolume();
     remote.up();
@@ -24,7 +24,7 @@ public class RemoteTest {
   @Test
   void remoteDecreaseVolumeOfATV() {
     TV tv = new TV();
-    Remote remote = RemoteFactory.createRemoteForTV(tv);
+    Remote remote = RemoteFactory.createRemote(tv);
 
     int volume = tv.getVolume();
     remote.down();
@@ -36,7 +36,7 @@ public class RemoteTest {
   @Test
   void remoteIncreaseSpeedOfAFan() {
     Fan fan = new Fan();
-    Remote remote = RemoteFactory.createRemoteForFan(fan);
+    Remote remote = RemoteFactory.createRemote(fan);
 
     int speed = fan.getSpeed();
     remote.up();
@@ -48,7 +48,7 @@ public class RemoteTest {
   @Test
   void remoteDecreaseSpeedOfAFan() {
     Fan fan = new Fan();
-    Remote remote = RemoteFactory.createRemoteForFan(fan);
+    Remote remote = RemoteFactory.createRemote(fan);
 
     int speed = fan.getSpeed();
     remote.down();
@@ -59,7 +59,7 @@ public class RemoteTest {
 
   void remoteOpenGarage() {
     Garage garage = new Garage();
-    Remote remote = RemoteFactory.createRemoteForGarage(garage);
+    Remote remote = RemoteFactory.createRemote(garage);
 
     boolean open = garage.isOpen();
     remote.up();
