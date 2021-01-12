@@ -1,0 +1,25 @@
+Do you think writing long functions are a good idea?
+
+Yes / no
+
+Have you recently seen long functions at work?
+
+Yes / no
+
+Cognitive dissonance
+
+Why are long function such a bad idea?
+-Hard to test
+-Hard to read and understand
+-Hard to maintain
+-Hard to debug
+-Hard to reuse
+-Leads to duplication
+-low cohesion  | good design expects high cohesion and low coupling
+-high coupling |
+-...
+
+How long is long?
+
+Single Level of Abstraction Principle (SLAP)
+
