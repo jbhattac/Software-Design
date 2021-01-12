@@ -1,0 +1,57 @@
+Open Closed Principle (OCP)
+A software module must be open for extension but closed from
+modification
+
+It is more expensive to modify a piece of code than adding
+a small piece of new code.
+
+Extensible code
+
+OOP - Polymorphism
+
+What is the most non-polymorphism "function" in languages like
+Java, C++, C#,...
+
+new
+
+new is === tight coupling
+
+new is polymorphic in languages like Ruby
+
+Abstract factory, factory method, are there to douple a client
+from the class of objects they need.
+
+Almost any function that contains instanceof may be violating 
+the OCP.
+
+if you have a piece of code which does instanceof on two or three
+different classes, then it has to change in the future to accommodate
+a new class - failure of OCP.
+
+Almost but not always, because
+
+Animal
+  public boolean equals(Object other) {
+    if(other instanceof Animal) { //This always checks for Animal
+    //not a violation OCP
+     ...
+    }
+
+    return false;
+  }
+
+
+  private is not enough
+
+private ArrayList<Book> books;
+public ArrayList<Book> getBooks() ...
+//this is not good enough
+
+User of the class knows the implementation is an ArrayList.
+They also may change the object from the caller side.
+You change the implemetation, the caller is affected.
+
+public Iterator<Book> getBooks()
+or
+public Stream<Book> getBooks() 
+may be better.
